@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #141414; }
+  ::-webkit-scrollbar-thumb { background: #303030; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #00cc7f; }
+}
+
+@layer components {
+
+  /* Glass card */
+  .glass {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+  }
+
+  .glass-hover {
+    @apply glass transition-all duration-300;
+  }
+  .glass-hover:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(0, 204, 127, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* Brand button */
+  .btn-brand {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           bg-brand-500 text-dark-900 transition-all duration-200 font-sans;
+  }
+  .btn-brand:hover {
+    @apply bg-brand-400;
+    box-shadow: 0 0 24px rgba(0,204,127,0.4);
+    transform: translateY(-1px);
+  }
+  .btn-brand:active { transform: translateY(0); }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm
+           border border-white/10 text-dark-100 transition-all duration-200 font-sans;
+  }
+  .btn-ghost:hover {
+    @apply border-brand-500/50 text-brand-400;
+    background: rgba(0,204,127,0.08);
+  }
+
+  /* Form inputs */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl bg-dark-700 border border-white/10 text-dark-50
+           placeholder-dark-300 text-sm transition-all duration-200 font-body;
+  }
+  .input:focus {
+    @apply outline-none border-brand-500/60;
+    box-shadow: 0 0 0 3px rgba(0,204,127,0.12);
+  }
+
+  /* Section heading */
+  .section-tag {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold
+           text-brand-400 border border-brand-500/20 font-sans uppercase tracking-widest;
+    background: rgba(0,204,127,0.08);
+  }
+
+  /* Score badge */
+  .score-badge {
+    @apply flex items-center justify-center w-12 h-12 rounded-2xl font-bold text-lg font-sans;
+    background: linear-gradient(135deg, rgba(0,204,127,0.15), rgba(0,204,127,0.05));
+    border: 1px solid rgba(0,204,127,0.25);
+    color: #00cc7f;
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply glass rounded-2xl p-6 flex flex-col gap-1;
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply text-dark-200 text-sm font-medium transition-colors duration-200 hover:text-brand-400 font-body;
+  }
+
+  /* Prize tier card */
+  .prize-card {
+    @apply glass rounded-2xl p-6 text-center transition-all duration-300;
+  }
+  .prize-card:hover {
+    border-color: rgba(0,204,127,0.2);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #00ffaa, #00cc7f, #00a366);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 40px rgba(0,204,127,0.2);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+}
