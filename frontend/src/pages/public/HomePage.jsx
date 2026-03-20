@@ -140,18 +140,18 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {PRIZES.map(({ match, share, color, border, text, jackpot }, i) => (
               <motion.div key={match} {...fadeUp(i * 0.1)}
-                className={`prize-card border ${border} bg-gradient-to-b ${color} ${jackpot ? 'ring-1 ring-brand-500/30 scale-105' : ''}`}>
+                className={`prize-card border ${border} bg-gradient-to-b ${color} ${jackpot ? 'ring-1 ring-brand-500/30' : ''}`}>
                 {jackpot && (
-                  <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold font-sans mb-3"
+                  <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold font-sans mb-3 whitespace-nowrap"
                     style={{ background: 'rgba(0,204,127,0.15)', color: '#00cc7f' }}>
                     Jackpot rollover
                   </div>
                 )}
-                <div className={`font-display font-extrabold text-5xl ${text} mb-2`}>{share}</div>
-                <div className="text-white font-display font-semibold text-lg">{match}</div>
+                <div className={`font-display font-extrabold text-4xl sm:text-5xl ${text} mb-2`}>{share}</div>
+                <div className="text-white font-display font-semibold text-base sm:text-lg">{match}</div>
                 <div className="text-dark-300 text-xs mt-1 font-body">of monthly pool</div>
               </motion.div>
             ))}
@@ -220,12 +220,12 @@ export default function HomePage() {
       {/* ── Final CTA ─────────────────────────────────────────── */}
       <section className="py-24 max-w-7xl mx-auto px-6">
         <motion.div {...fadeUp()}
-          className="glass rounded-3xl p-12 md:p-20 text-center relative overflow-hidden"
+          className="glass rounded-3xl p-6 sm:p-12 md:p-20 text-center relative overflow-hidden"
           style={{ background: 'linear-gradient(135deg, rgba(0,204,127,0.08), rgba(0,204,127,0.03))' }}>
           <div className="absolute inset-0 bg-grid opacity-30" />
           <div className="relative">
             <span className="section-tag mb-6">Ready to play?</span>
-            <h2 className="font-display font-bold text-4xl md:text-6xl text-white mt-4 mb-6">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-6xl text-white mt-4 mb-6">
               Join the community.<br />
               <span className="text-gradient">Make your game count.</span>
             </h2>
@@ -233,8 +233,8 @@ export default function HomePage() {
               Monthly plans from just £19.99. Cancel anytime. Every subscription funds a charity and enters a prize draw.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/register" className="btn-brand text-base px-10 py-4">Get started today</Link>
-              <Link to="/pricing"  className="btn-ghost text-base px-10 py-4">View pricing</Link>
+              <Link to="/register" className="btn-brand text-sm sm:text-base px-6 sm:px-10 py-3 sm:py-4">Get started today</Link>
+              <Link to="/pricing"  className="btn-ghost text-sm sm:text-base px-6 sm:px-10 py-3 sm:py-4">View pricing</Link>
             </div>
           </div>
         </motion.div>
