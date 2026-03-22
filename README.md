@@ -1,7 +1,7 @@
 # Golf Charity Subscription Platform
 
 > **Stack:** MERN (MongoDB + Express + React + Node.js)  
-> **Built for:** Digital Heroes — Full-Stack Trainee Selection Process
+
 
 ---
 
@@ -212,4 +212,6 @@ npm run build
 
 ---
 
-*Built for Digital Heroes — Golf Charity Subscription Platform*
+## Live Demo
+- Frontend: https://golf-platform-orcin.vercel.app
+- Backend API: https://golf-charity-api.onrender.com
